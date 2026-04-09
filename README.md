@@ -41,6 +41,7 @@ Currently, it is configured for:
 ---
 
 ## 📁 Project Structure
+```
 LinkPageProject/
 │
 ├── index.html # Main link page
@@ -52,7 +53,7 @@ LinkPageProject/
 │ ├── script.js # Logic for time and API
 │
 └── Images/ # Profile and assets
-
+```
 ---
 
 ## ▶️ How to Run
