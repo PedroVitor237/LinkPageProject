@@ -59,7 +59,6 @@ LinkPageProject/
 ## ▶️ How to Run
 
 1. Clone the repository:
-``bash
 git clone https://github.com/your-username/LinkPageProject.git
 
 2. Open the project folder
@@ -86,3 +85,4 @@ index.html
 
 ## 👨‍💻 Author
 Pedro Vitor
+[PedroVitor237](https://github.com/PedroVitor237)
