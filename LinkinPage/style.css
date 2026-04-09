@@ -29,3 +29,13 @@ a {
     display: block;
     text-align: center;
 }
+
+/* Future Improvements */
+
+/* 
+- Add hover effects to the links for better interactivity.
+- Make the page responsive for mobile devices.
+- Include icons or images next to the links for visual appeal. 
+- Add a "Toggle Theme" button to switch between light and dark modes.
+- Add a "Toggle Layout" button to switch between grid and list views for the links (to exercise Grid Layout and Flexbox concepts).
+*/

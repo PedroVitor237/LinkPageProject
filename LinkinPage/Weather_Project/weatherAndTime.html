@@ -4,21 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather and Time</title>
-    <link rel = "stylesheet" href = "estilo.css">
-
+    <link rel = "stylesheet" href = "style.css">
 </head>
-<body onload="carregar()">
+<body onload="loadTimeInfo()">
     <header>
         <h1>Horario e Clima</h1>
     </header>
 
     <section id="hora">
 
-        <div id = "msg">
-        </div>
+        <div id = "msg"> </div>
 
         <div id = "img">
-            <img id="imagem" src="leonardoPaisagemManh0.WebP" alt="Foto do Dia">
+            <img id="imagem" src="imagesWeather/leonardoPaisagemManh0.WebP" alt="Foto do Dia">
         </div>
 
     </section>
@@ -27,7 +25,7 @@
     <section id="clima">
         <div>
             <p>Clique no botão para verificar o clima em Itapecuru Mirim:</p>
-            <button onclick="buscarClima()">Verificar Clima de Itapecuru Mirim</button>
+            <button onclick="searchWeather()">Verificar Clima de Itapecuru Mirim</button>
         </div>
 
         <div id="resultado">
@@ -40,9 +38,17 @@
     </div>
     
     <footer>
-        <p>&copy;pvtor237</p>
+        <p>&copy;PedroVitor</p>
     </footer>
 
     <script src="script.js"></script>
 </body>
 </html>
+
+<!-- Future Improvements -->
+    <!-- 
+    - Add a "Toggle Theme" button to switch between light and dark modes.
+    - Make the page responsive for mobile devices.
+    - Include icons or images next to the links for visual appeal.
+    - Add an input field to allow users to select different cities for weather information.
+    -->

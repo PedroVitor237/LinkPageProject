@@ -1,5 +1,5 @@
 /* Mostra horário do sistema */
-function carregar() {
+function loadTimeInfo() {
     let msg = window.document.getElementById('msg')
     let img = window.document.getElementById('imagem')
     let data = new Date()
@@ -8,19 +8,19 @@ function carregar() {
     
     msg.innerHTML = `Agora são ${hrr} horas e ${min} minutos`
     if (hrr > 5.30 && hrr < 12) {
-        img.src = "leonardoPaisagemManh0.WebP"
+        img.src = "imagesWeather/leonardoPaisagemManh0.WebP"
         document.body.style.background = '#4fbfde'
     } else if (hrr > 11.59 && hrr < 18.30) {
-        img.src = "leonardoPaisagemTarde2.WebP"
+        img.src = "imagesWeather/leonardoPaisagemTarde2.WebP"
         document.body.style.background = '#ffbf6b'
     }  else {
-        img.src = "leonardoPaisagemNoite3.WebP"
+        img.src = "imagesWeather/leonardoPaisagemNoite3.WebP"
         document.body.style.background = '#162d55'
     }
 }
 
 /* Busca temperatura e velocidade do vento através da API Open-Meteo */
-function buscarClima() {
+function searchWeather() {
     const lat = -3.3096; // Latitude de Itapecuru Mirim
     const lon = -44.2489; // Longitude de Itapecuru Mirim
     fetch(`https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&current_weather=true`)

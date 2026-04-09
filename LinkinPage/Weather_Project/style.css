@@ -35,14 +35,9 @@ button {
 }
 
 #voltar {
-    background-color: rgb(62, 62, 168);
-    color: white;
-    border: none;
     padding: 10px 15px;
     border-radius: 20px;
-    cursor: pointer;
     font-size: 12pt;
-    font-family: "Courier New", Courier, monospace;
 }
 
 #resultado {
