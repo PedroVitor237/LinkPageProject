@@ -79,7 +79,7 @@ index.html
 - Add responsiveness for mobile devices 📱
 - Improve UI/UX design
 - Allow users to search weather by city
-- Include animations and hover effects
+- Include layouts, animations and hover effects
 
 ---
 
