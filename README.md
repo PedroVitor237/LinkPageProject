@@ -81,25 +81,35 @@ WebBasicsProjects/
 
 ## How to Run
 
-1. Clone the repository and enter its directory:
+Clone the repository and enter its directory:
 
-   ```bash
-   git clone https://github.com/PedroVitor237/WebBasicsProjects.git
-   cd WebBasicsProjects
-   ```
+```bash
+git clone https://github.com/PedroVitor237/WebBasicsProjects.git
+cd WebBasicsProjects
+```
 
-2. Serve the repository root with a local static server. For example, with Python:
+### Open Directly in a Browser
 
-   ```bash
-   python3 -m http.server 8000
-   ```
+The simplest option is to open `LinkPage/index.html` directly in a web browser.
 
-3. Open either project:
+### Use VS Code Live Server
 
-   - Link Page: `http://localhost:8000/LinkPage/`
-   - Weather and Time: `http://localhost:8000/Weather_Project/weatherAndTime.html`
+Open `LinkPage/index.html` in Visual Studio Code and select **Open with Live Server**. The Live Server extension will open the project in your browser and serve its files locally.
 
-Serving the repository root is important because navigation between the projects uses root-relative URLs. No installation, API key, or build step is required. The weather request requires an internet connection and access to Open-Meteo.
+### Use Python's HTTP Server
+
+From the repository root, run:
+
+```bash
+python3 -m http.server 8000
+```
+
+Then open either project:
+
+- Link Page: `http://localhost:8000/LinkPage/`
+- Weather and Time: `http://localhost:8000/Weather_Project/weatherAndTime.html`
+
+The project can be opened directly, but serving the repository root is important when using its root-relative navigation between projects. No API key or build step is required. The weather request requires an internet connection and access to Open-Meteo.
 
 ## Current Status and Limitations
 
