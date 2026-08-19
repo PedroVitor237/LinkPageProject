@@ -1,6 +1,6 @@
 # WebBasicsProjects
 
-WebBasicsProjects is a collection of small, static frontend projects built while studying and experimenting with foundational web development. The work began in the Mimo mobile app and was later expanded with browser-based JavaScript, DOM updates, and external API consumption.
+WebBasicsProjects is a collection of small, static frontend projects originally created for a presentation at a high school, with the goal of introducing basic programming and web development concepts, including HTML, CSS, JavaScript, and the consumption of data from an external API. The Link Page was initially developed using the Mimo mobile app and was later expanded and refined through continued study and experimentation.
 
 The repository currently contains two connected mini-projects. Each project has its own HTML, CSS, and assets, while the weather project also includes JavaScript. No frameworks, package dependencies, or build tools are used.
 
