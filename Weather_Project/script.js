@@ -8,13 +8,13 @@ function loadTimeInfo() {
     
     msg.innerHTML = `Agora são ${hrr} horas e ${min} minutos`
     if (hrr > 5.30 && hrr < 12) {
-        img.src = "ImagesWeather/leonardoPaisagemManh0.WebP"
+        img.src = "ImagesWeather/paisagemManh0.WebP"
         document.body.style.background = '#4fbfde'
     } else if (hrr > 11.59 && hrr < 18.30) {
-        img.src = "ImagesWeather/leonardoPaisagemTarde2.WebP"
+        img.src = "ImagesWeather/paisagemTarde2.WebP"
         document.body.style.background = '#ffbf6b'
     }  else {
-        img.src = "ImagesWeather/leonardoPaisagemNoite3.WebP"
+        img.src = "ImagesWeather/paisagemNoite3.WebP"
         document.body.style.background = '#162d55'
     }
 }
