@@ -1,97 +1,121 @@
-# Link Page Project
+# WebBasicsProjects
 
-Link Page Project is a small, static frontend project with a profile/link page and a separate weather-and-time interface. It began as a learning exercise in the Mimo mobile app and was later expanded through experimentation with vanilla HTML, CSS, JavaScript, browser APIs, and asynchronous data fetching.
+WebBasicsProjects is a collection of small, static frontend projects built while studying and experimenting with foundational web development. The work began in the Mimo mobile app and was later expanded with browser-based JavaScript, DOM updates, and external API consumption.
 
-The project demonstrates foundational frontend skills without frameworks, dependencies, or a build step.
+The repository currently contains two connected mini-projects. Each project has its own HTML, CSS, and assets, while the weather project also includes JavaScript. No frameworks, package dependencies, or build tools are used.
 
-## Implemented Features
+## Projects
 
-- A link page for the UEMA PROFITEC Systems Analysis and Development group, including an Instagram link and navigation to the weather project
-- A two-page structure connected with standard HTML links
-- A local time display generated when the weather page loads
-- Morning, afternoon, and night images and page colors selected from the browser's local system time
-- On-demand weather lookup for Itapecuru Mirim, Maranhao, Brazil
-- Dynamic rendering of temperature and wind speed returned by Open-Meteo
-- Custom CSS styling with a gradient, rounded elements, and panel shadows
+### 1. Link Page
 
-## Technologies and Frontend Concepts
+`LinkPage/` contains a profile and links page for the UEMA PROFITEC Systems Analysis and Development group. It includes:
 
-- HTML5 and CSS3
-- Vanilla JavaScript
-- DOM selection and dynamic `innerHTML`, image source, and inline style updates
-- Inline load and click event handlers
-- The browser `Date` API
-- The Fetch API, Promise chaining, JSON response processing, and basic error logging
-- The Open-Meteo Forecast API
+- A group logo and short introduction
+- An external Instagram link
+- A placeholder WhatsApp link
+- Navigation to the Weather and Time project
+- Custom CSS with a gradient background, percentage-based image and link widths, rounded elements, and centered content
 
-## Weather API Integration
+### 2. Weather and Time
 
-Weather data is requested only when the user selects the weather button. The project sends a `GET` request to Open-Meteo's `/v1/forecast` endpoint with these parameters:
+`Weather_Project/` contains an interactive weather-and-time page. It includes:
 
-- `latitude=-3.3096`
-- `longitude=-44.2489`
-- `current_weather=true`
+- A local time message generated when the page loads
+- Morning, afternoon, and night images selected according to the browser's local system time
+- Matching background-color changes for each time period
+- An on-demand weather request for Itapecuru Mirim, Maranhao, Brazil
+- Dynamic display of the returned temperature and wind speed
+- Navigation back to the Link Page
 
-The coordinates are hard-coded for Itapecuru Mirim. The response's `current_weather.temperature` and `current_weather.windspeed` values are displayed as degrees Celsius and kilometers per hour. The interface does not use browser geolocation or allow the user to choose another city.
-
-The request is handled with `fetch()` and `.then()` Promise callbacks. Failures are logged to the browser console; there is currently no loading state or visible error message.
-
-## Time-Based Interface
-
-When the weather page loads, JavaScript reads the browser's local hour and minute with `new Date()`, writes the time to the page, and changes the weather page's image and background color:
+The time is read once on page load rather than updated continuously. The implemented time periods are:
 
 - Morning: 06:00 through 11:59
 - Afternoon: 12:00 through 18:59
 - Night: 19:00 through 05:59
 
-This behavior is entirely client-side and applies only to the weather-and-time page.
+## Technologies and Concepts
 
-## Project Structure
+- HTML5 and CSS3
+- Vanilla JavaScript
+- Basic semantic HTML elements and standard anchor navigation
+- DOM element selection and `innerHTML` updates
+- Dynamic image source and inline background-style changes
+- Inline page-load and button-click event handlers
+- Conditional rendering based on the browser `Date` API
+- The Fetch API and Promise chaining with `.then()` and `.catch()`
+- JSON response processing and basic console error logging
+- Open-Meteo Forecast API integration
+
+## Open-Meteo Integration
+
+Selecting the weather button sends a `GET` request to Open-Meteo's `/v1/forecast` endpoint with:
+
+- `latitude=-3.3096`
+- `longitude=-44.2489`
+- `current_weather=true`
+
+The coordinates are hard-coded for Itapecuru Mirim. The interface reads `current_weather.temperature` and `current_weather.windspeed` from the JSON response and displays them in degrees Celsius and kilometers per hour.
+
+The project does not use geolocation or provide city selection. There is no loading state or visible error message; request failures are logged only to the browser console.
+
+## Repository Structure
 
 ```text
-LinkPageProject/
-├── LinkinPage/
+WebBasicsProjects/
+├── LinkPage/
 │   ├── index.html
 │   ├── style.css
-│   ├── Images/
-│   │   └── ads_logo.jpg
-│   └── Weather_Project/
-│       ├── weatherAndTime.html
-│       ├── style.css
-│       ├── script.js
-│       └── ImagesWeather/
-│           ├── leonardoPaisagemManh0.WebP
-│           ├── leonardoPaisagemTarde2.WebP
-│           └── leonardoPaisagemNoite3.WebP
+│   └── Images/
+│       └── ads_logo.jpg
+├── Weather_Project/
+│   ├── weatherAndTime.html
+│   ├── style.css
+│   ├── script.js
+│   └── ImagesWeather/
+│       ├── paisagemManh0.WebP
+│       ├── paisagemTarde2.WebP
+│       └── paisagemNoite3.WebP
 ├── LICENSE
 └── README.md
 ```
 
 ## How to Run
 
-1. Clone the repository:
+1. Clone the repository and enter its directory:
 
    ```bash
-   git clone https://github.com/PedroVitor237/LinkPageProject.git
+   git clone https://github.com/PedroVitor237/WebBasicsProjects.git
+   cd WebBasicsProjects
    ```
 
-2. Open `LinkinPage/index.html` in a web browser.
+2. Serve the repository root with a local static server. For example, with Python:
 
-No installation, configuration, API key, or build tool is required. An internet connection and access to the Open-Meteo service are required for the weather lookup; the rest of the project runs locally.
+   ```bash
+   python3 -m http.server 8000
+   ```
+
+3. Open either project:
+
+   - Link Page: `http://localhost:8000/LinkPage/`
+   - Weather and Time: `http://localhost:8000/Weather_Project/weatherAndTime.html`
+
+Serving the repository root is important because navigation between the projects uses root-relative URLs. No installation, API key, or build step is required. The weather request requires an internet connection and access to Open-Meteo.
 
 ## Current Status and Limitations
 
-The implemented pages, time-based visual changes, navigation, and fixed-location weather request are functional learning-project features. Current limitations include:
+Both mini-projects implement their core learning objectives, but they remain small experiments rather than production applications. Current limitations include:
 
-- The WhatsApp link is a placeholder rather than a working profile URL.
-- Weather sections use a fixed width and there are no responsive media queries, so the weather page may overflow on narrow screens.
-- Weather is limited to one hard-coded location and is fetched manually.
-- API errors are not shown in the page interface.
+- The WhatsApp destination is a placeholder.
+- The weather page uses fixed-width sections and has no responsive media queries, so it may overflow on narrow screens.
+- Weather is limited to one hard-coded location and is fetched only after a button click.
+- The displayed time is not refreshed after the page loads.
+- API errors are not displayed in the interface.
+- Root-relative navigation assumes the repository is served from the web server's root.
 
 ## Future Improvements
 
 - Add responsive behavior for smaller screens.
-- Improve the UI with refined layouts, hover states, and animations.
+- Improve the interfaces with refined layouts, hover states, and animations.
 - Allow weather searches by city.
 
 ## Author
